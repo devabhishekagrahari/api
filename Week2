@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<int> a = {1, 2, 3, 4};
+    vector<int> prefix(a.size());
+
+    //prefix[0] = a[0];  // Initialize the first element
+
+    for (int i = 0; i < a.size(); i++) {
+        prefix[i] = prefix[i - 1] + a[i];
+    }
+
+    cout << prefix[3];  // Should print 10 (1+2+3+4)
+    return 0;
+}
